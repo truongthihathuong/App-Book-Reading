@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -49,9 +50,31 @@ public class MainAdmin extends AppCompatActivity {
         });
 
 
+        //ấn giữ lâu sẽ xóa
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                DialogDelete(position);
+                return false;
+            }
+        });
+
+    }
+
+    private void DialogDelete(int position){
+        Dialog dialog = new Dialog(this);
+        //nạp layout vào dialog
+        dialog.setContentView(R.layout.dialogdelete);
+        //tắt click ra ngoài là đóng, chỉ click No mới đóng
+        dialog.setCanceledOnTouchOutside(false);
+
+        // ánh xạ
+        Button btnYes = dialog.findViewById(R.id.buttonYes);
+        Button btnNo = dialog.findViewById(R.id.buttonNo);
+
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 int idtruyen = TruyenArrayList.get(position).getID();
 
                 //xóa dữ liệu
@@ -62,12 +85,16 @@ public class MainAdmin extends AppCompatActivity {
                 finish();
                 startActivity(intent);
                 Toast.makeText(MainAdmin.this, "Xóa truyện thành công", Toast.LENGTH_SHORT).show();
-                return false;
             }
         });
-
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        dialog.show();
     }
-
     //gán dữ liệu cho listview
     private void initList() {
         TruyenArrayList = new ArrayList<>();
