@@ -54,7 +54,7 @@ public class databasedoctruyen extends SQLiteOpenHelper {
     //thêm dữ lieeu vào bảng tk
     //chú ý phân quyền: admin, user
     private String SQLQuery2 = "INSERT INTO TaiKhoan VAlUES (null,'admin','admin','admin@gmail.com',2)";
-    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'khanh','khanh','khanh@gmail.com',1)";
+    private String SQLQuery3 = "INSERT INTO TaiKhoan VAlUES (null,'nam','nam','nam@gmail.com',1)";
 
     private String SQLQuery4 = "INSERT INTO truyen VALUES (null,'Rùa và Thỏ','Phần 1:\n" +
             "\n" +
@@ -281,7 +281,7 @@ public class databasedoctruyen extends SQLiteOpenHelper {
         values.put(IMAGE, truyen.getAnh());
         values.put(ID_TAI_KHOAN, truyen.getID_TK());
 
-        db.insert(TABLE_TAIKHOAN, null, values);
+        db.insert(TABLE_TRUYEN, null, values);
         db.close();
     }
     //Xóa truyện

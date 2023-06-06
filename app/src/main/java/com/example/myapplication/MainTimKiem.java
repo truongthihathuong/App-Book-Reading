@@ -72,16 +72,18 @@ public class MainTimKiem extends AppCompatActivity {
 
     private void filter(String text){
         arrayList.clear();
+        //Tạo một danh sách mới có tên là filteredList, để chứa các phần tử truyện được lọc.
         ArrayList<Truyen> filteredList = new ArrayList<>();
         for(Truyen item : TruyenArrayList){
             if(item.getTenTruyen().toLowerCase().contains(text.toLowerCase())){
-                //Them item vao filteredList
+                // Nếu item phù hợp, nó sẽ được thêm vào filteredList.
                 filteredList.add(item);
 
                 //them vao mang
                 arrayList.add(item);
             }
         }
+        //cập nhật giao diện người dùng hiển thị danh sách truyện theo danh sách đã được lọc.
         adapterTruyen.filterList(filteredList);
     }
 
