@@ -28,7 +28,7 @@ public class adapterThongTin extends BaseAdapter {
     @Override
     public int getCount() {
         return taiKhoanList.size();
-    }
+    }//trả về tổng số tài khoản
 
     @Override
     public Object getItem(int position) {

@@ -7,14 +7,25 @@
     android:orientation="vertical"
     tools:context=".MainTimKiem">
 
-    <EditText
-        android:layout_margin="5dp"
-        android:id="@+id/timkiem"
-        android:textColorHighlight="#040404"
-        android:hint="Search"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:minHeight="48dp"></EditText>
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_margin="5dp"
+            android:id="@+id/timkiem"
+            android:textColorHighlight="#040404"
+            android:hint="Search"
+            android:layout_width="260dp"
+            android:layout_height="55dp"
+            android:minHeight="48dp"></EditText>
+        <Button
+            android:id="@+id/buttonTrangChu"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="Home"
+            android:layout_gravity="end"></Button>
+
+    </LinearLayout>
 
     <ListView
         android:background="#03A9F4"

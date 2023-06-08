@@ -30,7 +30,7 @@ public class adapterChuyenMuc extends BaseAdapter {
     @Override
     public int getCount() {
         return chuyenMucList.size();
-    }
+    } //trả về tổng số chuyên mục
 
     @Override
     public Object getItem(int position) {
@@ -56,7 +56,7 @@ public class adapterChuyenMuc extends BaseAdapter {
 
         txt.setText(cm.getTenchuyenmuc());
 
-        Picasso.get().load(cm.getHinhanhchuyenmuc()).placeholder(R.drawable.ic_load).error(R.drawable.ic_image).into(img);
+        img.setImageResource(cm.getHinhanhchuyenmuc());
         return convertView;
     }
 }

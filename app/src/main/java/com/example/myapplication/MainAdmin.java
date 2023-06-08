@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.util.List;
 public class MainAdmin extends AppCompatActivity {
     ListView listView;
     Button buttonThem;
+    ImageView imageViewHome;
     ArrayList<Truyen> TruyenArrayList;
     adapterTruyen adapterTruyen;
     databasedoctruyen databasedoctruyen;
@@ -32,6 +34,7 @@ public class MainAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_main_admin);
         listView = findViewById(R.id.listviewAdmin);
         buttonThem = findViewById(R.id.buttonThemtruyen);
+        imageViewHome = findViewById(R.id.imgvHomeAd);
 
         initList();
 
@@ -45,6 +48,13 @@ public class MainAdmin extends AppCompatActivity {
                 //tiếp tục gửi id qua màn hình thêm truyện
                 Intent intent = new Intent(MainAdmin.this, MainDangBai.class);
                 intent.putExtra("id", id);
+                startActivity(intent);
+            }
+        });
+        imageViewHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainAdmin.this, MainActivity.class );
                 startActivity(intent);
             }
         });

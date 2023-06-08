@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class MainTimKiem extends AppCompatActivity {
     ListView listView;
     EditText edt;
+    Button buttonTrangchu;
     ArrayList<Truyen> TruyenArrayList;
     ArrayList<Truyen> arrayList;
 
@@ -34,6 +36,7 @@ public class MainTimKiem extends AppCompatActivity {
         setContentView(R.layout.activity_main_tim_kiem);
         listView = findViewById(R.id.listviewtimkiem);
         edt = findViewById(R.id.timkiem);
+        buttonTrangchu = findViewById(R.id.buttonTrangChu);
 
         intiList();
 
@@ -66,6 +69,15 @@ public class MainTimKiem extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 filter(s.toString());
+            }
+        });
+
+        //chuyển về trang chủ
+        buttonTrangchu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainTimKiem.this, MainActivity.class );
+                startActivity(intent);
             }
         });
     }
