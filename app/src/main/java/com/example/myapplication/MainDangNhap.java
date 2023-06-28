@@ -48,6 +48,7 @@ public class MainDangNhap extends AppCompatActivity {
 
                 //sử dụng con trỏ để lấy dữ liệu, gọi tới getData() để lấy tất cả các tk ở database
                  Cursor cursor = databasedoctruyen.getData();
+                 boolean dangNhapThanhCong = false;
 
                 //Thực hiện vòng lặp để lấy dữ liệu từ cursor với moveToNext di chuyển tiếp
                 while ((cursor.moveToNext())){
@@ -58,7 +59,7 @@ public class MainDangNhap extends AppCompatActivity {
 
                     //nếu tk và mk nhập vào từ bàn phím
                     if(datatentaikhoan.equals(tentaikhoan) && datamatkhau.equals(matkhau)){
-
+                        dangNhapThanhCong = true;
                         //lấy dữ liệu phanquyen và id
                         int phanquyen = cursor.getInt(4);
                         int idd = cursor.getInt(0);
@@ -73,13 +74,17 @@ public class MainDangNhap extends AppCompatActivity {
                         intent.putExtra("idd", idd);
                         intent.putExtra("email", email);
                         intent.putExtra("tentaikhoan", tentk);
-
                         startActivity(intent);
+                        Toast.makeText(MainDangNhap.this, "Đăng nhập thành công", Toast.LENGTH_LONG).show();
+                        break;
+                    }
+//                    else{
+//                        Toast.makeText(MainDangNhap.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_LONG).show();
+//                    }
+                }
 
-                    }
-                    else{
-                        Toast.makeText(MainDangNhap.this, "Sai thông tin đăng nhập", Toast.LENGTH_LONG).show();
-                    }
+                if (!dangNhapThanhCong){
+                    Toast.makeText(MainDangNhap.this, "Sai tài khoản hoặc mật khẩu", Toast.LENGTH_LONG).show();
                 }
                 //thực hiện trả cursor về đầu
                 cursor.moveToFirst();

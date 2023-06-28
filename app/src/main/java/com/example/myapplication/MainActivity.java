@@ -111,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //đăng xuất
                 else if (position == 2) {
-                    finish();
+                    Intent intent2 = new Intent(MainActivity.this, MainDangNhap.class );
+                    startActivity(intent2);
                 }
             }
         });
