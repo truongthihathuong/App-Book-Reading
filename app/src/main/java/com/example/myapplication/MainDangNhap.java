@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.database.databasedoctruyen;
 
@@ -75,6 +76,9 @@ public class MainDangNhap extends AppCompatActivity {
 
                         startActivity(intent);
 
+                    }
+                    else{
+                        Toast.makeText(MainDangNhap.this, "Sai thông tin đăng nhập", Toast.LENGTH_LONG).show();
                     }
                 }
                 //thực hiện trả cursor về đầu
