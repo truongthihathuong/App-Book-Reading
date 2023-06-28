@@ -15,7 +15,8 @@
         android:textSize="30sp"
         android:text="Đăng bài"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></TextView>
+        android:layout_height="wrap_content">
+    </TextView>
 
     <EditText
         android:inputType="text"
@@ -25,7 +26,8 @@
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"></EditText>
+        android:minHeight="48dp">
+    </EditText>
 
     <EditText
         android:inputType="textMultiLine"
@@ -36,23 +38,50 @@
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"></EditText>
+        android:minHeight="48dp">
+    </EditText>
 
     <EditText
         android:inputType="text"
         android:id="@+id/dbImg"
-        android:hint="Ảnh"
+        android:hint="Url ảnh"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"></EditText>
+        android:minHeight="48dp">
+    </EditText>
 
-    <Button
-        android:id="@+id/dbDangbai"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Đăng bài"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Button>
+    <ImageView
+        android:layout_marginTop="20sp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add_img"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="50dp"
+            android:textColor="@color/white"
+            android:text="Chọn ảnh trong máy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+
+        <Button
+            android:id="@+id/dbDangbai"
+            android:layout_marginTop="20dp"
+            android:text="Đăng bài"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+    </LinearLayout>
 </LinearLayout>
