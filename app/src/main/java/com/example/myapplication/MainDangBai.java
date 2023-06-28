@@ -39,7 +39,7 @@ public class MainDangBai extends AppCompatActivity {
 
                 Truyen truyen = CreateTruyen();
 
-                if(tentruyen.equals("")|| noidung.equals("")||img.equals("")){
+                if(tentruyen.equals("")|| noidung.equals("")){
                     Toast.makeText(MainDangBai.this, "Bạn chưa nhập đủ thông tin", Toast.LENGTH_SHORT).show();
                     Log.e("Err: ", "Đã nhập đầy đủ thông tin");
                 }

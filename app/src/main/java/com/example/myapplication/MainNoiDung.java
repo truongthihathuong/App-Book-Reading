@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainNoiDung extends AppCompatActivity {
+public class    MainNoiDung extends AppCompatActivity {
 
     TextView txtTenTruyen, txtNoiDung;
 
